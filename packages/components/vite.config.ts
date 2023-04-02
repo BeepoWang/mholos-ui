@@ -1,13 +1,16 @@
 import { defineConfig, PluginOption } from "vite";
 import vue from '@vitejs/plugin-vue';
 import dts from 'vite-plugin-dts';
+// @ts-ignore
+import DefineOptions from "unplugin-vue-define-options/vite";
 
 
 export default defineConfig({
   build: {
+    //打包文件目录
     outDir: "es",
-    // minify: true,
     rollupOptions: {
+      //忽略打包vue和.less文件
       external: ["vue", /\.less/],
       input: ['index.ts'],
       output: [
@@ -37,6 +40,7 @@ export default defineConfig({
       outputDir: ['../mholos-ui/es/src', '../mholos-ui/lib/src'],
       tsConfigFilePath: '../../tsconfig.json'
     }),
+    DefineOptions(),
     {
       name: "style",
       generateBundle(config: any, bundle: { [x: string]: any; }) {
