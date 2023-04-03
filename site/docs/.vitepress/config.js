@@ -1,4 +1,5 @@
 export default {
+  base: process.env.NODE_ENV === 'production' ? 'mholos' : '/',
   themeConfig: {
     siteTitle: 'Mholos UI',
     nav: [

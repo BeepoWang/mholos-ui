@@ -3,12 +3,12 @@
 </template>
 
 <script lang="ts" setup>
-  defineOptions({
-    name: 'm-icon'
-  });
+defineOptions({
+  name: 'm-icon'
+});
 </script>
 
 <style lang="less" scoped>
-  .icon {
-  }
+.icon {
+}
 </style>
